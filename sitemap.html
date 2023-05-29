@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <title>Silent Library</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function (){
+      $('#header').load('header.html')
+    })
+
+    $(function (){
+      $('#footer').load('footer.html')
+    })
+  </script>
+  <style>
+    #site-map {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    #site-map a {
+      color: blue;
+      text-decoration: none;
+      font-size: 16px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    #site-map a:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<!------------- Header ------------------->
+
+<div id="header"></div>
+
+<!------------- Site Map ------------------->
+
+<div id="site-map">
+<a href="http://localhost:63342/OnePageWeb/login.html">Login</a><br>
+<a href="http://localhost:63342/OnePageWeb/user-registration.html">User Registration</a><br>
+<a href="http://localhost:63342/OnePageWeb/index.html">Home</a><br>
+<a href="http://localhost:63342/OnePageWeb/index.html">About</a><br>
+<a href="http://localhost:63342/OnePageWeb/books.html">Books</a><br>
+<a href="http://localhost:63342/OnePageWeb/events.html">Events</a><br>
+<a href="http://localhost:63342/OnePageWeb/contact.html">Contact</a><br><a href="http://localhost:63342/OnePageWeb/admin.html">Admin</a><br>
+</div>
+<!------------- Footer ---------------->
+
+<div id="footer"></div>
+
+<!----------------Javscript-------------->
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("login-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var username = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+    if (username !== "aloka" || password !== "aloka") {
+      alert("Incorrect User Name or Password");
+      return false;
+    }
+    if (username !== "aloka" && password !== "aloka") {
+      alert("Login Successful");
+    }
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("password", password);
+    window.location.href = "admin.html";
+  });
+
+</script>
+</body>
+</html>
